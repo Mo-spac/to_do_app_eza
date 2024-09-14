@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'To-Do App',
       debugShowCheckedModeBanner: false,
       home: SplashScreen(),
