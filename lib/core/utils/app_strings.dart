@@ -1,5 +1,5 @@
 class AppStrings {
-  static const String appName = "UpTo do";
+  static const String appName = "Up To do";
   static const String skipName = "Skip";
   static const String nextName = "Next";
   static const String backName = "Back";
