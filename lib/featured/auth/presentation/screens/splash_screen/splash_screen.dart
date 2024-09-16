@@ -36,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
+      // backgroundColor: AppColors.backgroundColor,
       body: Center(
           child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -45,14 +45,10 @@ class _SplashScreenState extends State<SplashScreen> {
           const SizedBox(
             height: 24,
           ),
-          Text(
-            AppStrings.appName,
-            style: GoogleFonts.lato(
-              color: AppColors.whiteColor,
-              fontSize: 40,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          Text(AppStrings.appName,
+              style: Theme.of(context).textTheme.displayLarge!.copyWith(
+                    fontSize: 40,
+                  )),
         ],
       )),
     );

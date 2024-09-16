@@ -16,7 +16,7 @@ class OnBoardingScreens extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: AppColors.backgroundColor,
+        // backgroundColor: AppColors.backgroundColor,
         body: Padding(
           padding: const EdgeInsets.all(24.0),
           child: PageView.builder(
@@ -36,13 +36,13 @@ class OnBoardingScreens extends StatelessWidget {
                                     OnBoardingModel.onBoardingScreens.length -
                                         1);
                               },
-                              child: Text(
-                                AppStrings.skipName,
-                                style: GoogleFonts.lato(
-                                  color: AppColors.whiteColor.withOpacity(0.44),
-                                  fontSize: 16,
-                                ),
-                              ),
+                              child: Text(AppStrings.skipName,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .displayMedium!
+                                      .copyWith(
+                                        fontSize: 16,
+                                      )),
                             ),
                           ),
 
@@ -60,9 +60,9 @@ class OnBoardingScreens extends StatelessWidget {
                     // dots
                     SmoothPageIndicator(
                       controller: pageController,
-                      count: 3,
+                      count: OnBoardingModel.onBoardingScreens.length,
                       effect: ExpandingDotsEffect(
-                        activeDotColor: AppColors.primaryColor,
+                        activeDotColor: Theme.of(context).primaryColor,
                         // dotColor: AppColors.redColor,
                         dotHeight: 10,
                         dotWidth: 10,
@@ -111,11 +111,12 @@ class OnBoardingScreens extends StatelessWidget {
                                 },
                                 child: Text(
                                   AppStrings.backName,
-                                  style: GoogleFonts.lato(
-                                    color:
-                                        AppColors.whiteColor.withOpacity(0.44),
-                                    fontSize: 16,
-                                  ),
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .displayMedium!
+                                      .copyWith(
+                                        color: Colors.white,
+                                      ),
                                 ),
                               ),
                         Spacer(),
@@ -132,18 +133,16 @@ class OnBoardingScreens extends StatelessWidget {
                                     ),
                                   );
                                 },
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: AppColors.primaryColor,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(4),
-                                  ),
-                                ),
+                                style:
+                                    Theme.of(context).elevatedButtonTheme.style,
                                 child: Text(
                                   AppStrings.getStartedName,
-                                  style: GoogleFonts.lato(
-                                    color: AppColors.whiteColor,
-                                    // fontSize: 16,
-                                  ),
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .displayMedium!
+                                      .copyWith(
+                                        color: Colors.white,
+                                      ),
                                 ),
                               )
                             : ElevatedButton(
@@ -154,18 +153,16 @@ class OnBoardingScreens extends StatelessWidget {
                                   );
                                   // Navigat to Home
                                 },
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: AppColors.primaryColor,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(4),
-                                  ),
-                                ),
+                                style:
+                                    Theme.of(context).elevatedButtonTheme.style,
                                 child: Text(
                                   AppStrings.nextName,
-                                  style: GoogleFonts.lato(
-                                    color: AppColors.whiteColor,
-                                    // fontSize: 16,
-                                  ),
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .displayMedium!
+                                      .copyWith(
+                                        color: Colors.white,
+                                      ),
                                 ),
                               ),
                       ],
