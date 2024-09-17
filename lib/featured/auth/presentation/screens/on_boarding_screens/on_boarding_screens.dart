@@ -27,7 +27,7 @@ class OnBoardingScreens extends StatelessWidget {
                   children: [
                     // skip text
                     index == OnBoardingModel.onBoardingScreens.length - 1
-                        ? SizedBox()
+                        ? const SizedBox()
                         : Align(
                             alignment: Alignment.centerLeft,
                             child: TextButton(
@@ -70,7 +70,7 @@ class OnBoardingScreens extends StatelessWidget {
                       ),
                     ),
 
-                    SizedBox(
+                    const SizedBox(
                       height: 52,
                     ),
                     //title
@@ -102,11 +102,12 @@ class OnBoardingScreens extends StatelessWidget {
                       children: [
                         // back button
                         index == 0
-                            ? SizedBox()
+                            ? const SizedBox()
                             : TextButton(
                                 onPressed: () {
                                   pageController.previousPage(
-                                      duration: Duration(milliseconds: 1000),
+                                      duration:
+                                          const Duration(milliseconds: 1000),
                                       curve: Curves.fastLinearToSlowEaseIn);
                                 },
                                 child: Text(
@@ -119,7 +120,7 @@ class OnBoardingScreens extends StatelessWidget {
                                       ),
                                 ),
                               ),
-                        Spacer(),
+                        const Spacer(),
 
                         // next button
                         index == OnBoardingModel.onBoardingScreens.length - 1
@@ -129,7 +130,7 @@ class OnBoardingScreens extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (_) => HomeScreen(),
+                                      builder: (_) => const HomeScreen(),
                                     ),
                                   );
                                 },
@@ -148,7 +149,8 @@ class OnBoardingScreens extends StatelessWidget {
                             : ElevatedButton(
                                 onPressed: () {
                                   pageController.nextPage(
-                                    duration: Duration(milliseconds: 1000),
+                                    duration:
+                                        const Duration(milliseconds: 1000),
                                     curve: Curves.fastLinearToSlowEaseIn,
                                   );
                                   // Navigat to Home

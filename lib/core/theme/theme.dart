@@ -6,7 +6,7 @@ ThemeData getAppTheme() {
   return ThemeData(
     primaryColor: AppColors.primaryColor,
     scaffoldBackgroundColor: AppColors.backgroundColor,
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.backgroundColor,
       centerTitle: true,
     ),
@@ -36,7 +36,7 @@ ThemeData getAppDarkTheme() {
   return ThemeData(
     primaryColor: AppColors.redColor,
     scaffoldBackgroundColor: AppColors.backgroundColor,
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.backgroundColor,
       centerTitle: true,
     ),
