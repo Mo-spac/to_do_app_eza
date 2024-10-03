@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:to_do_app_ageeza/core/database/cache_helper.dart';
+import 'package:to_do_app_ageeza/core/service_locator/service_locator.dart';
 import 'package:to_do_app_ageeza/core/utils/app_assets.dart';
 import 'package:to_do_app_ageeza/core/utils/app_colors.dart';
 import 'package:to_do_app_ageeza/core/utils/app_strings.dart';
 import 'package:to_do_app_ageeza/featured/auth/presentation/screens/on_boarding_screens/on_boarding_screens.dart';
+import 'package:to_do_app_ageeza/featured/task/presentation/screens/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,13 +17,15 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   void naviate() {
+    bool isVisited =
+        sL<CacheHelper>().getData(key: AppStrings.onBoardingKey) ?? false;
     Future.delayed(
       const Duration(seconds: 3),
       () {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (_) => OnBoardingScreens(),
+            builder: (_) => isVisited ? HomeScreen() : OnBoardingScreens(),
           ),
         );
       },

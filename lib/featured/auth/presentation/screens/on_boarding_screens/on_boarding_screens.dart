@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:to_do_app_ageeza/core/database/cache_helper.dart';
+import 'package:to_do_app_ageeza/core/service_locator/service_locator.dart';
 import 'package:to_do_app_ageeza/core/utils/app_assets.dart';
 import 'package:to_do_app_ageeza/core/utils/app_colors.dart';
 import 'package:to_do_app_ageeza/core/utils/app_strings.dart';
@@ -125,14 +127,22 @@ class OnBoardingScreens extends StatelessWidget {
                         // next button
                         index == OnBoardingModel.onBoardingScreens.length - 1
                             ? ElevatedButton(
-                                onPressed: () {
-                                  // Navigat to Home
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (_) => const HomeScreen(),
-                                    ),
-                                  );
+                                onPressed: () async {
+                                  await sL<CacheHelper>()
+                                      .saveData(
+                                          key: AppStrings.onBoardingKey,
+                                          value: true)
+                                      .then((value) {
+                                    print('Boarding is visited');
+                                    Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (_) => const HomeScreen(),
+                                      ),
+                                    );
+                                  }).catchError((e) {
+                                    print(e.toString());
+                                  });
                                 },
                                 style:
                                     Theme.of(context).elevatedButtonTheme.style,
