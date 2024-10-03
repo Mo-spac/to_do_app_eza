@@ -16,6 +16,11 @@ ThemeData getAppTheme() {
         fontWeight: FontWeight.bold,
         fontSize: 32,
       ),
+      bodyLarge: GoogleFonts.lato(
+        color: AppColors.whiteColor,
+        fontWeight: FontWeight.bold,
+        fontSize: 24,
+      ),
       displayMedium: GoogleFonts.lato(
         color: AppColors.whiteColor.withOpacity(0.44),
         fontSize: 16,
@@ -45,6 +50,11 @@ ThemeData getAppDarkTheme() {
         color: AppColors.whiteColor,
         fontWeight: FontWeight.bold,
         fontSize: 32,
+      ),
+      bodyLarge: GoogleFonts.lato(
+        color: AppColors.whiteColor,
+        fontWeight: FontWeight.bold,
+        fontSize: 24,
       ),
       displayMedium: GoogleFonts.lato(
         color: AppColors.whiteColor.withOpacity(0.44),
