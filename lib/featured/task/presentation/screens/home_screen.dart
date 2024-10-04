@@ -61,7 +61,53 @@ class HomeScreen extends StatelessWidget {
                   ),
                   // no tasks
                   // NoTaskComponent(),
-                  TaskComponent(),
+                  InkWell(
+                      onTap: () {
+                        showModalBottomSheet(
+                          context: context,
+                          builder: (context) {
+                            return Container(
+                              padding: EdgeInsets.all(24),
+                              height: 240,
+                              decoration: BoxDecoration(
+                                color: AppColors.deepGreyColor,
+                              ),
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  SizedBox(
+                                    height: 48,
+                                    width: double.infinity,
+                                    child: CustomElevatedButton(
+                                      onPressed: () {},
+                                      text: AppStrings.taskCompleted,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 48,
+                                    width: double.infinity,
+                                    child: CustomElevatedButton(
+                                      backgroundColor: AppColors.redColor,
+                                      onPressed: () {},
+                                      text: AppStrings.deleteTask,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 48,
+                                    width: double.infinity,
+                                    child: CustomElevatedButton(
+                                      onPressed: () {},
+                                      text: AppStrings.cancel,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        );
+                      },
+                      child: TaskComponent()),
                   // TaskComponent(),
                   // TaskComponent(),
                 ],
@@ -70,50 +116,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            showModalBottomSheet(
-              context: context,
-              builder: (context) {
-                return Container(
-                  padding: EdgeInsets.all(24),
-                  height: 240,
-                  decoration: BoxDecoration(
-                    color: AppColors.deepGreyColor,
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(
-                        height: 48,
-                        width: double.infinity,
-                        child: CustomElevatedButton(
-                          onPressed: () {},
-                          text: AppStrings.taskCompleted,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 48,
-                        width: double.infinity,
-                        child: CustomElevatedButton(
-                          backgroundColor: AppColors.redColor,
-                          onPressed: () {},
-                          text: AppStrings.deleteTask,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 48,
-                        width: double.infinity,
-                        child: CustomElevatedButton(
-                          onPressed: () {},
-                          text: AppStrings.cancel,
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              },
-            );
-          },
+          onPressed: () {},
           backgroundColor: AppColors.primaryColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),
