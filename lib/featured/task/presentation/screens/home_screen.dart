@@ -4,6 +4,8 @@ import 'package:intl/intl.dart';
 import 'package:to_do_app_ageeza/core/utils/app_assets.dart';
 import 'package:to_do_app_ageeza/core/utils/app_colors.dart';
 import 'package:to_do_app_ageeza/core/utils/app_strings.dart';
+import 'package:to_do_app_ageeza/featured/task/presentation/components/no_task_component.dart';
+import 'package:to_do_app_ageeza/featured/task/presentation/components/task_component.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -56,7 +58,10 @@ class HomeScreen extends StatelessWidget {
                     height: 50,
                   ),
                   // no tasks
-                  // noTasksWidget(context),
+                  // NoTaskComponent(),
+                  TaskComponent(),
+                  TaskComponent(),
+                  TaskComponent(),
                 ],
               ),
             ],
@@ -77,24 +82,24 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Column noTasksWidget(BuildContext context) {
-    return Column(
-      children: [
-        Image.asset(AppAssets.noTasks),
-        Text(
-          AppStrings.noTaskTitle,
-          style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                fontSize: 24,
-                color: AppColors.whiteColor,
-              ),
-        ),
-        Text(
-          AppStrings.noTaskSubTitle,
-          style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                color: AppColors.whiteColor,
-              ),
-        ),
-      ],
-    );
-  }
+  // Column noTasksWidget(BuildContext context) {
+  //   return Column(
+  //     children: [
+  //       Image.asset(AppAssets.noTasks),
+  //       Text(
+  //         AppStrings.noTaskTitle,
+  //         style: Theme.of(context).textTheme.displayMedium!.copyWith(
+  //               fontSize: 24,
+  //               color: AppColors.whiteColor,
+  //             ),
+  //       ),
+  //       Text(
+  //         AppStrings.noTaskSubTitle,
+  //         style: Theme.of(context).textTheme.displayMedium!.copyWith(
+  //               color: AppColors.whiteColor,
+  //             ),
+  //       ),
+  //     ],
+  //   );
+  // }
 }
