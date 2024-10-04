@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
                   padding: EdgeInsets.all(24),
                   height: 240,
                   decoration: BoxDecoration(
-                    color: AppColors.deepGreyColor,
+                    color: AppColors.deepGrey,
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                         height: 48,
                         width: double.infinity,
                         child: CustomElevatedButton(
-                          backgroundColor: AppColors.redColor,
+                          backgroundColor: AppColors.red,
                           onPressed: () {},
                           text: AppStrings.deleteTask,
                         ),
@@ -56,13 +56,13 @@ class HomeScreen extends StatelessWidget {
               },
             );
           },
-          backgroundColor: AppColors.primaryColor,
+          backgroundColor: AppColors.primary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),
           ),
           child: Icon(
             Icons.add,
-            color: AppColors.whiteColor,
+            color: AppColors.white,
           ),
         ),
       ),

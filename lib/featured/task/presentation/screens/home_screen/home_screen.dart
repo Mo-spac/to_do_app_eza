@@ -46,8 +46,8 @@ class HomeScreen extends StatelessWidget {
                   DatePicker(
                     DateTime.now(),
                     initialSelectedDate: DateTime.now(),
-                    selectionColor: AppColors.primaryColor,
-                    selectedTextColor: AppColors.whiteColor,
+                    selectionColor: AppColors.primary,
+                    selectedTextColor: AppColors.white,
                     dateTextStyle: Theme.of(context).textTheme.displayMedium!,
                     monthTextStyle: Theme.of(context).textTheme.displayMedium!,
                     dayTextStyle: Theme.of(context).textTheme.displayMedium!,
@@ -72,7 +72,7 @@ class HomeScreen extends StatelessWidget {
                               padding: EdgeInsets.all(24),
                               height: 240,
                               decoration: BoxDecoration(
-                                color: AppColors.deepGreyColor,
+                                color: AppColors.deepGrey,
                               ),
                               child: Column(
                                 mainAxisAlignment:
@@ -90,7 +90,7 @@ class HomeScreen extends StatelessWidget {
                                     height: 48,
                                     width: double.infinity,
                                     child: CustomElevatedButton(
-                                      backgroundColor: AppColors.redColor,
+                                      backgroundColor: AppColors.red,
                                       onPressed: () {},
                                       text: AppStrings.deleteTask,
                                     ),
@@ -121,13 +121,13 @@ class HomeScreen extends StatelessWidget {
           onPressed: () {
             navigate(context: context, screen: AddTaskScreen());
           },
-          backgroundColor: AppColors.primaryColor,
+          backgroundColor: AppColors.primary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),
           ),
           child: Icon(
             Icons.add,
-            color: AppColors.whiteColor,
+            color: AppColors.white,
           ),
         ),
       ),

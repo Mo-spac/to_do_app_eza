@@ -13,17 +13,10 @@ class NoTaskComponent extends StatelessWidget {
         Image.asset(AppAssets.noTasks),
         Text(
           AppStrings.noTaskTitle,
-          style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                fontSize: 24,
-                color: AppColors.whiteColor,
-              ),
+          style: Theme.of(context).textTheme.bodyLarge,
         ),
-        Text(
-          AppStrings.noTaskSubTitle,
-          style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                color: AppColors.whiteColor,
-              ),
-        ),
+        Text(AppStrings.noTaskSubTitle,
+            style: Theme.of(context).textTheme.displayMedium),
       ],
     );
   }

@@ -90,7 +90,7 @@ class OnBoardingScreens extends StatelessWidget {
                     Text(
                       OnBoardingModel.onBoardingScreens[index].title,
                       style: GoogleFonts.lato(
-                        color: AppColors.whiteColor,
+                        color: AppColors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 32,
                       ),
@@ -103,7 +103,7 @@ class OnBoardingScreens extends StatelessWidget {
                       OnBoardingModel.onBoardingScreens[index].subTitle,
                       textAlign: TextAlign.center,
                       style: GoogleFonts.lato(
-                        color: AppColors.whiteColor.withOpacity(0.87),
+                        color: AppColors.white.withOpacity(0.87),
                         fontSize: 16,
                       ),
                     ),
@@ -123,7 +123,8 @@ class OnBoardingScreens extends StatelessWidget {
                                           const Duration(milliseconds: 1000),
                                       curve: Curves.fastLinearToSlowEaseIn);
                                 },
-                                text: AppStrings.backName),
+                                text: AppStrings.backName,
+                              ),
                         // TextButton(
                         //     onPressed: () {
                         //       pageController.previousPage(

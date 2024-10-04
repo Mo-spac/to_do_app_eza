@@ -6,7 +6,7 @@ class CustomElevatedButton extends StatelessWidget {
     super.key,
     required this.onPressed,
     required this.text,
-    this.backgroundColor = AppColors.primaryColor,
+    this.backgroundColor = AppColors.primary,
   });
 
   final void Function() onPressed;
@@ -21,7 +21,7 @@ class CustomElevatedButton extends StatelessWidget {
             .style
             ?.backgroundColor
             ?.resolve({}) ??
-        AppColors.primaryColor;
+        AppColors.primary;
 
     return ElevatedButton(
       onPressed: onPressed,

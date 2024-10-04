@@ -31,8 +31,8 @@ class TimeAndDatePicker extends StatelessWidget {
       DatePicker(
         DateTime.now(),
         initialSelectedDate: DateTime.now(),
-        selectionColor: AppColors.primaryColor,
-        selectedTextColor: AppColors.whiteColor,
+        selectionColor: AppColors.primary,
+        selectedTextColor: AppColors.white,
         dateTextStyle: Theme.of(context).textTheme.displayMedium!,
         monthTextStyle: Theme.of(context).textTheme.displayMedium!,
         dayTextStyle: Theme.of(context).textTheme.displayMedium!,

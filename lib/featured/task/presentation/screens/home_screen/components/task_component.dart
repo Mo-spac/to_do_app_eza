@@ -14,7 +14,7 @@ class TaskComponent extends StatelessWidget {
       padding: EdgeInsets.all(8),
       height: 135,
       decoration: BoxDecoration(
-        color: AppColors.redColor,
+        color: AppColors.red,
         borderRadius: BorderRadius.circular(16),
       ),
       child: Row(
@@ -32,7 +32,7 @@ class TaskComponent extends StatelessWidget {
                 children: [
                   Icon(
                     Icons.timer,
-                    color: AppColors.whiteColor,
+                    color: AppColors.white,
                   ),
                   SizedBox(
                     width: 8,
@@ -40,7 +40,7 @@ class TaskComponent extends StatelessWidget {
                   Text(
                     '09:33 PM - 09:48 PM',
                     style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                          color: AppColors.whiteColor,
+                          color: AppColors.white,
                         ),
                   ),
                 ],
@@ -57,19 +57,15 @@ class TaskComponent extends StatelessWidget {
               Container(
                 height: 80,
                 width: 1,
-                color: AppColors.whiteColor,
+                color: AppColors.white,
               ),
               SizedBox(
                 width: 8,
               ),
               RotatedBox(
                 quarterTurns: 3,
-                child: Text(
-                  AppStrings.toDo,
-                  style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                        color: Colors.white,
-                      ),
-                ),
+                child: Text(AppStrings.toDo,
+                    style: Theme.of(context).textTheme.displayMedium),
               ),
             ],
           ),
