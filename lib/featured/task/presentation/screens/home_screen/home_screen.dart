@@ -7,9 +7,9 @@ import 'package:to_do_app_ageeza/core/utils/app_colors.dart';
 import 'package:to_do_app_ageeza/core/utils/app_strings.dart';
 import 'package:to_do_app_ageeza/core/widgets/custom_elevated_button.dart';
 import 'package:to_do_app_ageeza/core/widgets/custom_text_button.dart';
+import 'package:to_do_app_ageeza/featured/task/presentation/screens/add_task_screen/add_task_screen.dart';
 import 'package:to_do_app_ageeza/featured/task/presentation/screens/home_screen/components/no_task_component.dart';
 import 'package:to_do_app_ageeza/featured/task/presentation/screens/home_screen/components/task_component.dart';
-import 'package:to_do_app_ageeza/featured/task/presentation/screens/home_screen/components/time_and_date_picker.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -23,9 +23,41 @@ class HomeScreen extends StatelessWidget {
           child: ListView(
             children: [
               Column(
-                // crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  TimeAndDatePicker(),
+                  Text(
+                    DateFormat.yMMMMd().format(DateTime.now()),
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          color: Colors.white,
+                        ),
+                  ),
+                  const SizedBox(
+                    height: 12,
+                  ),
+                  Text(
+                    AppStrings.today,
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                          color: Colors.white,
+                        ),
+                  ),
+                  const SizedBox(
+                    height: 12,
+                  ),
+                  DatePicker(
+                    DateTime.now(),
+                    initialSelectedDate: DateTime.now(),
+                    selectionColor: AppColors.primaryColor,
+                    selectedTextColor: AppColors.whiteColor,
+                    dateTextStyle: Theme.of(context).textTheme.displayMedium!,
+                    monthTextStyle: Theme.of(context).textTheme.displayMedium!,
+                    dayTextStyle: Theme.of(context).textTheme.displayMedium!,
+                    onDateChange: (date) {
+                      // New date selected
+                      //   setState(() {
+                      //     _selectedValue = date;
+                      //   });
+                    },
+                  ),
                   SizedBox(
                     height: 50,
                   ),
@@ -87,7 +119,7 @@ class HomeScreen extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            // navigate(context: context, screen: screen)
+            navigate(context: context, screen: AddTaskScreen());
           },
           backgroundColor: AppColors.primaryColor,
           shape: RoundedRectangleBorder(

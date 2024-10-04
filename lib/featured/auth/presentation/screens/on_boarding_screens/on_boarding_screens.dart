@@ -10,7 +10,7 @@ import 'package:to_do_app_ageeza/core/utils/app_strings.dart';
 import 'package:to_do_app_ageeza/core/widgets/custom_elevated_button.dart';
 import 'package:to_do_app_ageeza/core/widgets/custom_text_button.dart';
 import 'package:to_do_app_ageeza/featured/auth/data/models/onboarding_model.dart';
-import 'package:to_do_app_ageeza/featured/task/presentation/screens/home_screen.dart';
+import 'package:to_do_app_ageeza/featured/task/presentation/screens/home_screen/home_screen.dart';
 
 class OnBoardingScreens extends StatelessWidget {
   OnBoardingScreens({super.key});
