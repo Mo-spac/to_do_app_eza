@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'To-Do App',
       theme: getAppTheme(),
-      darkTheme: getAppDarkTheme(),
+      darkTheme: getAppTheme(),
       themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
       home: const SplashScreen(),

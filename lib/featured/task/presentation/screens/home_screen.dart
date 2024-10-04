@@ -4,6 +4,8 @@ import 'package:intl/intl.dart';
 import 'package:to_do_app_ageeza/core/utils/app_assets.dart';
 import 'package:to_do_app_ageeza/core/utils/app_colors.dart';
 import 'package:to_do_app_ageeza/core/utils/app_strings.dart';
+import 'package:to_do_app_ageeza/core/widgets/custom_elevated_button.dart';
+import 'package:to_do_app_ageeza/core/widgets/custom_text_button.dart';
 import 'package:to_do_app_ageeza/featured/task/presentation/components/no_task_component.dart';
 import 'package:to_do_app_ageeza/featured/task/presentation/components/task_component.dart';
 
@@ -60,15 +62,58 @@ class HomeScreen extends StatelessWidget {
                   // no tasks
                   // NoTaskComponent(),
                   TaskComponent(),
-                  TaskComponent(),
-                  TaskComponent(),
+                  // TaskComponent(),
+                  // TaskComponent(),
                 ],
               ),
             ],
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            showModalBottomSheet(
+              context: context,
+              builder: (context) {
+                return Container(
+                  padding: EdgeInsets.all(24),
+                  height: 240,
+                  decoration: BoxDecoration(
+                    color: AppColors.deepGreyColor,
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      SizedBox(
+                        height: 48,
+                        width: double.infinity,
+                        child: CustomElevatedButton(
+                          onPressed: () {},
+                          text: AppStrings.taskCompleted,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 48,
+                        width: double.infinity,
+                        child: CustomElevatedButton(
+                          backgroundColor: AppColors.redColor,
+                          onPressed: () {},
+                          text: AppStrings.deleteTask,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 48,
+                        width: double.infinity,
+                        child: CustomElevatedButton(
+                          onPressed: () {},
+                          text: AppStrings.cancel,
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              },
+            );
+          },
           backgroundColor: AppColors.primaryColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(50),
@@ -81,25 +126,4 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-
-  // Column noTasksWidget(BuildContext context) {
-  //   return Column(
-  //     children: [
-  //       Image.asset(AppAssets.noTasks),
-  //       Text(
-  //         AppStrings.noTaskTitle,
-  //         style: Theme.of(context).textTheme.displayMedium!.copyWith(
-  //               fontSize: 24,
-  //               color: AppColors.whiteColor,
-  //             ),
-  //       ),
-  //       Text(
-  //         AppStrings.noTaskSubTitle,
-  //         style: Theme.of(context).textTheme.displayMedium!.copyWith(
-  //               color: AppColors.whiteColor,
-  //             ),
-  //       ),
-  //     ],
-  //   );
-  // }
 }
