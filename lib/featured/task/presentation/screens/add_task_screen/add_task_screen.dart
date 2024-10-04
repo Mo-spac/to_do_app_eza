@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:to_do_app_ageeza/core/utils/app_colors.dart';
 import 'package:to_do_app_ageeza/core/utils/app_strings.dart';
+import 'package:to_do_app_ageeza/featured/task/presentation/screens/add_task_screen/components/add_task_component.dart';
 
-class AddTaskScreen extends StatelessWidget {
+class AddTaskScreen extends StatefulWidget {
   AddTaskScreen({super.key});
+
+  @override
+  State<AddTaskScreen> createState() => _AddTaskScreenState();
+}
+
+class _AddTaskScreenState extends State<AddTaskScreen> {
   TextEditingController titleController = TextEditingController();
+
   TextEditingController noteController = TextEditingController();
+
+  DateTime currentDate = DateTime.now();
 
   @override
   Widget build(BuildContext context) {
@@ -33,30 +44,44 @@ class AddTaskScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(AppStrings.note,
-                  style: Theme.of(context).textTheme.displayMedium),
-              SizedBox(
-                height: 8,
-              ),
-              TextFormField(
+              AddTaskComponent(
+                title: AppStrings.tilte,
                 controller: titleController,
-                decoration: InputDecoration(
-                  hintText: AppStrings.tilteHint,
-                ),
+                hintText: AppStrings.tilteHint,
               ),
               SizedBox(
                 height: 24,
               ),
-              Text(AppStrings.tilte,
-                  style: Theme.of(context).textTheme.displayMedium),
-              SizedBox(
-                height: 8,
-              ),
-              TextFormField(
+              AddTaskComponent(
+                title: AppStrings.note,
                 controller: noteController,
-                decoration: InputDecoration(
-                  hintText: AppStrings.notehint,
-                ),
+                hintText: AppStrings.notehint,
+              ),
+              SizedBox(
+                height: 24,
+              ),
+              AddTaskComponent(
+                readOnly: true,
+                title: AppStrings.date,
+                controller: noteController,
+                hintText: DateFormat.yMd().format(currentDate),
+                suffixIcon: IconButton(
+                    onPressed: () async {
+                      DateTime? pickedDate = await showDatePicker(
+                        context: context,
+                        initialDate: DateTime.now(),
+                        firstDate: DateTime.now(),
+                        lastDate: DateTime(2027),
+                        // initialDatePickerMode: DatePickerMode.day,
+                        // initialEntryMode: DatePickerEntryMode.inputOnly,
+                      );
+                      setState(() {});
+                      currentDate = pickedDate!;
+                    },
+                    icon: Icon(
+                      Icons.calendar_month_rounded,
+                      color: AppColors.white,
+                    )),
               ),
             ],
           ),
