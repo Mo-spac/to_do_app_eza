@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:to_do_app_ageeza/app/app.dart';
 import 'package:to_do_app_ageeza/core/database/cache_helper.dart';
 import 'package:to_do_app_ageeza/core/service_locator/service_locator.dart';

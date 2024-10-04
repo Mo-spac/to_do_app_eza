@@ -155,7 +155,8 @@ class OnBoardingScreens extends StatelessWidget {
                                       .then((value) {
                                     print('Boarding is visited');
                                     navigate(
-                                        context: context, screen: HomeScreen());
+                                        context: context,
+                                        screen: const HomeScreen());
                                     // Navigator.pushReplacement(
                                     //   context,
                                     //   MaterialPageRoute(
