@@ -25,6 +25,7 @@ class AppStrings {
   static const String startTime = 'Start Time';
   static const String endTime = 'End Time';
   static const String createTask = 'Create task';
+  static const String color = 'Color';
   static const String toDo = 'TODO';
   static const String completed = 'COMPLETED';
   static const String taskCompleted = 'Task Completed';
