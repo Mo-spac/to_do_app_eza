@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
+import 'package:to_do_app_ageeza/app/app.dart';
 import 'package:to_do_app_ageeza/core/utils/app_colors.dart';
 import 'package:to_do_app_ageeza/core/utils/app_strings.dart';
 import 'package:to_do_app_ageeza/core/widgets/custom_elevated_button.dart';
@@ -61,7 +63,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                     hintText: AppStrings.tilteHint,
                   ),
                   SizedBox(
-                    height: 24,
+                    height: 24.h,
                   ),
                   AddTaskComponent(
                     title: AppStrings.note,
@@ -69,7 +71,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                     hintText: AppStrings.notehint,
                   ),
                   SizedBox(
-                    height: 24,
+                    height: 24.h,
                   ),
                   AddTaskComponent(
                     readOnly: true,
@@ -100,7 +102,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                         )),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 20.h,
                   ),
                   Row(
                     children: [
@@ -133,7 +135,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                         ),
                       ),
                       SizedBox(
-                        width: 26,
+                        width: 26.w,
                       ),
                       Expanded(
                         child: AddTaskComponent(
@@ -166,22 +168,22 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                     ],
                   ),
                   SizedBox(
-                    height: 24,
+                    height: 24.h,
                   ),
                   Column(
                     children: [
                       Text(AppStrings.color,
                           style: Theme.of(context).textTheme.displayMedium),
                       SizedBox(
-                        height: 8,
+                        height: 8.h,
                       ),
                       SizedBox(
-                        height: 48,
+                        height: 48.h,
                         child: ListView.separated(
                             scrollDirection: Axis.horizontal,
                             itemCount: 6,
                             separatorBuilder: (context, index) => SizedBox(
-                                  width: 8,
+                                  width: 8.w,
                                 ),
                             itemBuilder: (context, index) {
                               Color getColors(index) {
@@ -221,11 +223,11 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                     ],
                   ),
                   SizedBox(
-                    height: 100,
+                    height: 100.h,
                   ),
                   SizedBox(
-                    height: 48,
-                    width: double.infinity,
+                    height: 48.h,
+                    width: double.infinity.w,
                     child: CustomElevatedButton(
                       onPressed: () {},
                       text: AppStrings.addTask,

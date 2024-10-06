@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:to_do_app_ageeza/app/app.dart';
 
 class CustomTextButton extends StatelessWidget {
   const CustomTextButton({
@@ -17,7 +19,7 @@ class CustomTextButton extends StatelessWidget {
       child: Text(
         text,
         style: Theme.of(context).textTheme.displayMedium!.copyWith(
-              fontSize: 16,
+              fontSize: 16.sp,
             ),
       ),
     );

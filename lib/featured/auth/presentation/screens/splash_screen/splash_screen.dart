@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:to_do_app_ageeza/core/database/cache_helper.dart';
 import 'package:to_do_app_ageeza/core/service_locator/service_locator.dart';
@@ -48,12 +49,12 @@ class _SplashScreenState extends State<SplashScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image.asset(AppAssets.logo),
-          const SizedBox(
-            height: 24,
+          SizedBox(
+            height: 24.h,
           ),
           Text(AppStrings.appName,
               style: Theme.of(context).textTheme.displayLarge!.copyWith(
-                    fontSize: 40,
+                    fontSize: 40.sp,
                   )),
         ],
       )),

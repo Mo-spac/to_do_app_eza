@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:to_do_app_ageeza/app/app.dart';
 
 class AddTaskComponent extends StatelessWidget {
   const AddTaskComponent({
@@ -22,7 +24,7 @@ class AddTaskComponent extends StatelessWidget {
       children: [
         Text(title, style: Theme.of(context).textTheme.displayMedium),
         SizedBox(
-          height: 8,
+          height: 8.h,
         ),
         TextFormField(
           readOnly: readOnly,

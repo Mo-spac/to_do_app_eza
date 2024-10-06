@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:to_do_app_ageeza/app/app.dart';
 import 'package:to_do_app_ageeza/core/commons/common.dart';
 import 'package:to_do_app_ageeza/core/database/cache_helper.dart';
 import 'package:to_do_app_ageeza/core/service_locator/service_locator.dart';
@@ -54,21 +56,21 @@ class OnBoardingScreens extends StatelessWidget {
                             //           .textTheme
                             //           .displayMedium!
                             //           .copyWith(
-                            //             fontSize: 16,
+                            //             fontSize: 16.sp,
                             //           )),
                             // ),
                           ),
 
                     // SizedBox(
-                    //   height: 16,
+                    //   height: 16.h,
                     // ),
                     // image
                     Image.asset(
                       OnBoardingModel.onBoardingScreens[index].imagePath,
-                      height: 290,
+                      height: 290.h,
                     ),
                     // SizedBox(
-                    //   height: 16,
+                    //   height: 16.h,
                     // ),
                     // dots
                     SmoothPageIndicator(
@@ -77,14 +79,14 @@ class OnBoardingScreens extends StatelessWidget {
                       effect: ExpandingDotsEffect(
                         activeDotColor: Theme.of(context).primaryColor,
                         // dotColor: AppColors.redColor,
-                        dotHeight: 10,
-                        dotWidth: 10,
+                        dotHeight: 10.h,
+                        dotWidth: 10.w,
                         spacing: 8,
                       ),
                     ),
 
-                    const SizedBox(
-                      height: 52,
+                    SizedBox(
+                      height: 52.h,
                     ),
                     //title
                     Text(
@@ -92,11 +94,11 @@ class OnBoardingScreens extends StatelessWidget {
                       style: GoogleFonts.lato(
                         color: AppColors.white,
                         fontWeight: FontWeight.bold,
-                        fontSize: 32,
+                        fontSize: 32.sp,
                       ),
                     ),
                     // SizedBox(
-                    //   height: 42,
+                    //   height: 42.h,
                     // ),
                     // // sunTitle
                     Text(
@@ -104,11 +106,11 @@ class OnBoardingScreens extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: GoogleFonts.lato(
                         color: AppColors.white.withOpacity(0.87),
-                        fontSize: 16,
+                        fontSize: 16.sp,
                       ),
                     ),
                     // SizedBox(
-                    //   height: 100,
+                    //   height: 100.h,
                     // ),
                     // buttons
                     Row(

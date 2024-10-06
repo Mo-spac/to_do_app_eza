@@ -1,5 +1,6 @@
 import 'package:date_picker_timeline/date_picker_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:to_do_app_ageeza/core/utils/app_colors.dart';
 import 'package:to_do_app_ageeza/core/utils/app_strings.dart';
@@ -16,8 +17,8 @@ class TimeAndDatePicker extends StatelessWidget {
               color: Colors.white,
             ),
       ),
-      const SizedBox(
-        height: 12,
+      SizedBox(
+        height: 12.h,
       ),
       Text(
         AppStrings.today,
@@ -25,8 +26,8 @@ class TimeAndDatePicker extends StatelessWidget {
               color: Colors.white,
             ),
       ),
-      const SizedBox(
-        height: 12,
+      SizedBox(
+        height: 12.h,
       ),
       DatePicker(
         DateTime.now(),

@@ -1,5 +1,6 @@
 import 'package:date_picker_timeline/date_picker_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:to_do_app_ageeza/core/commons/common.dart';
 import 'package:to_do_app_ageeza/core/utils/app_assets.dart';
@@ -19,7 +20,7 @@ class HomeScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 24.w),
           child: ListView(
             children: [
               Column(
@@ -31,8 +32,8 @@ class HomeScreen extends StatelessWidget {
                           color: Colors.white,
                         ),
                   ),
-                  const SizedBox(
-                    height: 12,
+                  SizedBox(
+                    height: 12.h,
                   ),
                   Text(
                     AppStrings.today,
@@ -40,8 +41,8 @@ class HomeScreen extends StatelessWidget {
                           color: Colors.white,
                         ),
                   ),
-                  const SizedBox(
-                    height: 12,
+                  SizedBox(
+                    height: 12.h,
                   ),
                   DatePicker(
                     DateTime.now(),
@@ -59,57 +60,59 @@ class HomeScreen extends StatelessWidget {
                     },
                   ),
                   SizedBox(
-                    height: 50,
+                    height: 50.h,
                   ),
                   // no tasks
                   // NoTaskComponent(),
+
                   InkWell(
-                      onTap: () {
-                        showModalBottomSheet(
-                          context: context,
-                          builder: (context) {
-                            return Container(
-                              padding: EdgeInsets.all(24),
-                              height: 240,
-                              decoration: BoxDecoration(
-                                color: AppColors.deepGrey,
-                              ),
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  SizedBox(
-                                    height: 48,
-                                    width: double.infinity,
-                                    child: CustomElevatedButton(
-                                      onPressed: () {},
-                                      text: AppStrings.taskCompleted,
-                                    ),
+                    onTap: () {
+                      showModalBottomSheet(
+                        context: context,
+                        builder: (context) {
+                          return Container(
+                            padding: EdgeInsets.all(24),
+                            height: 150.h,
+                            decoration: BoxDecoration(
+                              color: AppColors.deepGrey,
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                SizedBox(
+                                  height: 35.h,
+                                  width: double.infinity,
+                                  child: CustomElevatedButton(
+                                    onPressed: () {},
+                                    text: AppStrings.taskCompleted,
                                   ),
-                                  SizedBox(
-                                    height: 48,
-                                    width: double.infinity,
-                                    child: CustomElevatedButton(
-                                      backgroundColor: AppColors.red,
-                                      onPressed: () {},
-                                      text: AppStrings.deleteTask,
-                                    ),
+                                ),
+                                SizedBox(
+                                  height: 35.h,
+                                  width: double.infinity,
+                                  child: CustomElevatedButton(
+                                    backgroundColor: AppColors.red,
+                                    onPressed: () {},
+                                    text: AppStrings.deleteTask,
                                   ),
-                                  SizedBox(
-                                    height: 48,
-                                    width: double.infinity,
-                                    child: CustomElevatedButton(
-                                      onPressed: () {},
-                                      text: AppStrings.cancel,
-                                    ),
+                                ),
+                                SizedBox(
+                                  height: 35.h,
+                                  width: double.infinity,
+                                  child: CustomElevatedButton(
+                                    onPressed: () {},
+                                    text: AppStrings.cancel,
                                   ),
-                                ],
-                              ),
-                            );
-                          },
-                        );
-                      },
-                      child: TaskComponent()),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      );
+                    },
+                    child: TaskComponent(),
+                  ),
+
                   // TaskComponent(),
                   // TaskComponent(),
                 ],
