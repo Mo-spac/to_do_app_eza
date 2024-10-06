@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: EdgeInsets.symmetric(vertical: 24.h, horizontal: 24.w),
+          padding: EdgeInsets.symmetric(vertical: 24, horizontal: 24),
           child: ListView(
             children: [
               Column(

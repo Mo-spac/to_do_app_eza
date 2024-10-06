@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:to_do_app_ageeza/app/app.dart';
 import 'package:to_do_app_ageeza/core/database/cache_helper.dart';
 import 'package:to_do_app_ageeza/core/service_locator/service_locator.dart';
+import 'package:to_do_app_ageeza/featured/task/presentation/cubit/task_cubit/task_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,7 +18,10 @@ void main() async {
   // print(b.hashCode);
   // print(a == b);
 
-  runApp(const MyApp());
+  runApp(BlocProvider(
+    create: (context) => TaskCubit(),
+    child: const MyApp(),
+  ));
 }
 
 // class A {
